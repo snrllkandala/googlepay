@@ -33,7 +33,7 @@ pipeline {
             }
             steps {
             
-		configFileProvider([configFile(fileId: '7f0b3bb4-8c36-465a-b8f9-cbfa78f6b8ae', variable: 'MAVEN_GLOBAL_SETTINGS')]) {
+		configFileProvider([configFile(fileId: '03dee1b6-a400-4004-baea-100b2de383fb', variable: 'MAVEN_GLOBAL_SETTINGS')]) {
                bat "mvn -gs ${MAVEN_GLOBAL_SETTINGS} deploy -DmuleDeploy -Dserver=${server} -Dregion=${region} -Denvironment=${environment_dev} -Dworkers=${worker_dev} -DworkerType=${workerType_dev} -Dapp.runtime=${muleRuntime} -Dapp.name=${appName_dev}"
             }}
         }
@@ -44,7 +44,7 @@ pipeline {
             }
             steps {
            
-		configFileProvider([configFile(fileId: '7f0b3bb4-8c36-465a-b8f9-cbfa78f6b8ae', variable: 'MAVEN_GLOBAL_SETTINGS')]) 
+		configFileProvider([configFile(fileId: '03dee1b6-a400-4004-baea-100b2de383fb', variable: 'MAVEN_GLOBAL_SETTINGS')]) 
 		{
                 bat  "mvn -gs ${MAVEN_GLOBAL_SETTINGS} deploy -DmuleDeploy -Dserver=${server} -Dregion=${region} -Denvironment=${environment_prod} -Dworkers=${worker_prod} -DworkerType=${workerType_prod} -Dapp.runtime=${muleRuntime} -Dapp.name=${appName_prod}"
         }
